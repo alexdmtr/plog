@@ -126,7 +126,10 @@ app.get('/', jwtMiddleware, function (req, res) {
     res.render('home', { user: req.user, searchQuery })
 })
 
+
 app.get('/login', (req, res) => {
+    if (req.user)
+        return res.redirect('/')
     console.log(req.cookies)
     console.log(req.signedCookies)
     console.log("HEYYY!")
@@ -134,7 +137,27 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/signup', (req, res) => {
+    if (req.user)
+        return res.redirect('/')
     res.render('signup')
+})
+
+var models = require('./models').models
+
+app.get('/details/:id', async function(req, res) {
+    let id = req.params.id
+    console.log(id)
+
+    var Post = models.post;
+    var Photo = models.photo
+    var User = models.user
+
+    var post = await Post.findById(id, {
+        include: [ User, Photo ]
+    })
+
+    console.log(post)
+    res.render('detail', { plog:post})
 })
 
 

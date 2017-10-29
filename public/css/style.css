@@ -1,0 +1,25 @@
+body {
+    /*margin: 40px auto;*/
+    /*max-width: 650px;*/
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    padding-bottom: 20px;
+}
+
+h1,h2,h3 {
+    line-height: 1.2
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+#register-form {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#register-form input {
+    margin: 10px;
+}

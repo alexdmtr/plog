@@ -5,12 +5,14 @@ let __id = 0;
 function getId() {
   return `article${__id++}`;
 }
-
+function gotoStory(id) {
+  window.location.replace(`/details/${id}`)
+}
 function iconTemplate(plog) {
   let id = getId() 
   let photo = plog.photos[Math.floor(plog.photos.length*Math.random())]
   return `<article class="thumb">
-  <a href="#" class="image" id=>
+  <a href="" onclick="event.preventDefault(); gotoStory(${plog.id})" class="image">
     <img src="${photo.url}" alt="" style="max-height:400px"/> </a>
   <h2>
     <a href="#"><strong>${plog.title}</strong> </a>
