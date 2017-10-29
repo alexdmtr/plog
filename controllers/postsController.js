@@ -11,33 +11,34 @@ const Op = Sequelize.Op
 //     where: { postId: postId }
 //   })
 // }
+
+async function dataGetPosts(query) {
+  return Post.findAll({
+    include: [User, Photo]
+  })
+  .then(posts => {
+    if (!query) query = ""
+    else {
+      query = query.toUpperCase()
+      posts = posts.filter(post => {
+          let ok = [post.title, post.location, post.user.username]
+
+          ok = ok.map(x => x.toUpperCase())
+
+          return ok.some(x => x.includes(query))
+      })
+    }
+    return Promise.resolve(posts)
+  
+
+  })
+}
+exports.dataGetPosts = dataGetPosts;
 exports.getPosts = async function (req, res) {
   let query = req.query.query
-  Post
-    .findAll({
-      include: [User, Photo]
-    })
-    .then(posts => {
-      // for (let i = 0; i < posts.length; i++) {
-      //   posts[i].photos = getPostPhotos(posts[i].id)
-      // }
+  posts = await dataGetPosts(query)
 
-      if (!query) query = ""
-      else {
-        query = query.toUpperCase()
-        posts = posts.filter(post => {
-            let ok = [post.title, post.location, post.user.username]
-
-            ok = ok.map(x => x.toUpperCase())
-
-            return ok.some(x => x.includes(query))
-        })
-    }
-
-      res.json(posts)
-
-    })
-
+  res.json(posts)
 }
 /*
   Method POST on route ‘api/group/{groupId}/post’ - creates a new post and receives all the fields except groupId, because we have the groupId in the route.

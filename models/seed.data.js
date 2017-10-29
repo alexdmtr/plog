@@ -8,6 +8,16 @@ module.exports = {
       "username": "darth.vader",
       "password": "shh",
       "email": "darth.vader@email.com",
+    },
+    {
+      "username": "george.sholder",
+      "password": "hellopotato",
+      "email": "sholderer@gmail.com",
+    },
+    {
+      "username": "leone.paddington",
+      "password": "omgnotatrainline",
+      "email": "leone@gmail.com",
     }
   ],
 
@@ -23,6 +33,30 @@ module.exports = {
       message: "#coldwinds",
       location: "Reykjavík",
       user: "darth.vader"
+    },
+    {
+      title: "Sweden is amazing!",
+      message: "#belowzerolife",
+      location: "Stockholm",
+      user: "george.sholder"
+    },
+    {
+      title: "Week in Thailand",
+      message: "#itsoshumid #help",
+      location: "Pataya",
+      user: "leone.paddington"
+    },
+    {
+      title: "Weekend in Morocco",
+      message: "#morocco #marrakesh",
+      location: "Marrakesh",
+      user: "leone.paddington"
+    },
+    {
+      title: "Two Days in Barcelona",
+      message: "Most amazing two days in Barcelona, everything here is so amazing!",
+      location: "Barcelona",
+      user: "george.sholder"
     }
   ],
 
@@ -33,9 +67,119 @@ module.exports = {
       postID: 1
     },
     {
-      title: "Brunnhorn Mountain",
-      url: "https://guidetoiceland.is/image/4830/x/0/mountains-in-iceland-3.jpg",
+      title: "Manchester Out",
+      url: "https://images.unsplash.com/photo-1446874206706-2879f0803d27?auto=format&fit=crop&w=1953&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
+      postID: 1
+    },
+    {
+      title: "Hitting the road",
+      url: "https://images.unsplash.com/photo-1473526750398-bfd02f485230?auto=format&fit=crop&w=1950&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
+      postID: 1
+    },
+    {
+      title: "youcute.",
+      url: "https://images.unsplash.com/photo-1455757618770-0a58b0b28ebd?auto=format&fit=crop&w=881&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
+      postID: 1
+    },
+    {
+      title: "Iceland Mountains",
+      url: "https://images.unsplash.com/photo-1455757618770-0a58b0b28ebd?auto=format&fit=crop&w=881&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
       postID: 2
+    },
+    {
+      title: "Keflavik!",
+      url: "https://i1.wp.com/grapevine.is/wp-content/uploads/akureyri_26506505815_o-1.jpg?fit=1800%2C1200&quality=85&ssl=1",
+      postID: 2
+    },
+    {
+      title: "In love with Iceland!",
+      url: "http://www.salamandatravel.com/LinkClick.aspx?fileticket=f_99PL4CkUM%253d&portalid=0&language=en-US",
+      postID: 2
+    },
+    {
+      title: "Selfoss took my breath away",
+      url: "https://i.ytimg.com/vi/uuw4rnQa9U0/maxresdefault.jpg",
+      postID: 2
+    },
+    {
+      title: "ILOVESWEDEN!!",
+      url: "https://d3bwu0f92zgi29.cloudfront.net/wp-content/uploads/2016/04/570f9b0a6c69e-93c26ddb08e6b5ae0ed7a86504c6492b-600x600.jpg",
+      postID: 3
+    },
+    {
+      title: "Gothenburg food :) ",
+      url: "https://d3bwu0f92zgi29.cloudfront.net/wp-content/uploads/2013/07/Meatballs-600x600.jpg",
+      postID: 3
+    },
+    {
+      title: "OhMySweden",
+      url: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Söderköpings_sluss%2C_Göta_kanal%2C_juli_2005.jpg",
+      postID: 3
+    },
+    {
+      title: "Swedish Supercar in Gothenburg!",
+      url: "https://carzach.files.wordpress.com/2014/07/img_4924.jpg?w=720",
+      postID: 3
+    },
+    {
+      title: "Bangkok Food Market",
+      url: "http://images.pond5.com/busy-food-market-bangkok-thailand-footage-012360339_prevstill.jpeg",
+      postID: 4
+    },
+    {
+      title: "Muay-Thai Fight in Pataya",
+      url: "https://i.ytimg.com/vi/_QeMgZ-KRCA/maxresdefault.jpg",
+      postID: 4
+    },
+    {
+      title: "Thai Beach love",
+      url: "http://cdn.pcwallart.com/images/thailand-beaches-wallpaper-3.jpg",
+      postID: 4
+    },
+    {
+      title: "Chilling Thaland",
+      url: "https://carzach.files.wordpress.com/2014/07/img_4924.jpg?w=720",
+      postID: 4
+    },
+    {
+      title: "Morocco Street",
+      url: "https://cdn.passporthealthusa.com/wp-content/uploads/2017/05/vaccines-advice-morocco.jpg?x61082",
+      postID: 5
+    },
+    {
+      title: "Just another market in Morocco",
+      url: "http://www.moroccotomorrow.org/wp-content/uploads/2017/10/Morocco-112.jpg",
+      postID: 5
+    },
+    {
+      title: "The views here!",
+      url: "https://s1.it.atcdn.net/wp-content/uploads/2014/11/Hi_LW6018_47535282_namaskar_24.jpg",
+      postID: 5
+    },
+    {
+      title: "I don't even have words!",
+      url: "https://rahhalah.com/wp-content/uploads/2015/12/Excursiones-marrakech-desierto.jpg",
+      postID: 5
+    },
+    {
+      title: "What a view!",
+      url: "https://i.imgur.com/7TT4JRg.jpg",
+      postID: 6
+    },
+    {
+      title: "Such a colourful city",
+      url: "https://i.imgur.com/EcwqK4Y.jpg",
+      postID: 6
+    },
+    {
+      title: "Drink up!",
+      url: "https://i.imgur.com/jgZlgi2.jpg",
+      postID: 6
+    },
+    {
+      title: "Most Amazing Church I've ever seen",
+      url: "https://rts.com.eg/wp-content/uploads/st_uploadfont/spain-barcelona-city-hd-espanol-travel-pictures-high-753936.jpg",
+      postID: 6
     }
   ]
 
