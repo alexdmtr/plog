@@ -9,6 +9,9 @@ module.exports = function (sequelize) {
     },
     title: {
       type: Sequelize.STRING(100)
+    },
+    url: {
+      type: Sequelize.STRING(255)
     }
   }, {
     timestamps: true

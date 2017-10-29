@@ -216,7 +216,7 @@
 			var $main = $('#main');
 
 			// Thumbs.
-				$main.children('.thumb').each(function() {
+				setThumbs = function() { $main.children('.thumb').each(function() {
 
 					var	$this = $(this),
 						$image = $this.find('.image'), $image_img = $image.children('img'),
@@ -250,10 +250,12 @@
 									$image.trigger('click');
 								});
 
-				});
+				}); }
 
 			// Poptrox.
-				$main.poptrox({
+				poptrox = function() { 
+					$main = $("#main")
+					$main.poptrox({
 					baseZIndex: 20000,
 					caption: function($a) {
 
@@ -283,7 +285,7 @@
 					usePopupLoader: true,
 					usePopupNav: true,
 					windowMargin: 50
-				});
+				}); };
 
 				// Hack: Set margins to 0 when 'xsmall' activates.
 					skel
