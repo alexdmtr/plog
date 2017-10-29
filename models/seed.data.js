@@ -57,6 +57,24 @@ module.exports = {
       message: "Most amazing two days in Barcelona, everything here is so amazing!",
       location: "Barcelona",
       user: "george.sholder"
+    },
+    {
+      title: "Rolling on route 66",
+      message: "Rolling in California!",
+      location: "California",
+      user: "george.sholder"
+    },
+    {
+      title: "Week in Georgia",
+      message: "Skiing, Drinking and having fun!",
+      location: "Georgia",
+      user: "george.sholder"
+    },
+    {
+      title: "Five days in Barcelona",
+      message: "Making these five days the most amazing in our life.",
+      location: "Barcelona",
+      user: "leone.paddington"
     }
   ],
 
@@ -176,11 +194,75 @@ module.exports = {
       url: "https://i.imgur.com/jgZlgi2.jpg",
       postID: 6
     },
-    {
+   
+      {
       title: "Most Amazing Church I've ever seen",
       url: "https://rts.com.eg/wp-content/uploads/st_uploadfont/spain-barcelona-city-hd-espanol-travel-pictures-high-753936.jpg",
       postID: 6
-    }
+    },
+      
+    {
+      title: "When Dreams Come True",
+      url: "https://imgur.com/7JaQbNW.jpg",
+      postID: 7
+    },
+    {
+      title: "Freedom",
+      url: "https://imgur.com/ELd0ZnL.jpg",
+      postID: 7
+    },
+    {
+      title: "Squad",
+      url: "https://imgur.com/44jpIqx.jpg",
+      postID: 7
+    },
+    {
+      title: "Boss on the Road!!!",
+      url: "https://imgur.com/UWuzuBN.jpg",
+      postID: 7
+    },
+      {
+      title: "Killin it!",
+      url: "https://imgur.com/BknxMSn.jpg",
+      postID: 8
+    },
+    {
+      title: "Sketchy one",
+      url: "https://imgur.com/v7f5dnc.jpg",
+      postID: 8
+    },
+    {
+      title: "Thumbs Up!",
+      url: "https://imgur.com/LPRpeiR.jpg",
+      postID: 8
+    },
+    {
+      title: "Friends",
+      url: "https://imgur.com/nYMcyiu.jpg",
+      postID: 8
+    },
+      
+      {
+      title: "Holidays in Barcelona",
+      url: "https://imgur.com/2ERGjSe.jpg",
+      postID: 9
+    },
+    {
+      title: "Loved this place",
+      url: "https://imgur.com/MXOB1b1.jpg",
+      postID: 9
+    },
+    {
+      title: "Don't look at me, look at the view!",
+      url: "https://imgur.com/quseG1c.jpg",
+      postID: 9
+    },
+    {
+      title: "Food in Barcelona is Perfect",
+      url: "https://imgur.com/8xTGbVB.jpg",
+      postID: 9
+    },
+      
   ]
 
 
