@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const bcrypt = require('bcrypt')
-const saltRounds = 12;
+const saltRounds = 10;
 var Promise = require('bluebird')
 
 function hashPassword(user) {

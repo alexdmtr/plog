@@ -28,11 +28,11 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
+											<li><a href="/">Home</a></li>
 											<!-- <li><a href="generic.html">Generic</a></li> -->
-<!-- Need to create html page for what we do.--><li><a href="index.html">Log In</a></li>
-<!-- Html page for sign-up called signup.html--><li><a href="whoweare.html">Who we are</a></li>
-											<li><a href="contactusemail.html">Contact Us</a></li>
+<!-- Need to create html page for what we do.--><li><a href="/login">Log In</a></li>
+{{!-- <!-- Html page for sign-up called signup.html--><li><a href="whoweare.html">Who we are</a></li> --}}
+											{{!-- <li><a href="contactusemail.html">Contact Us</a></li> --}}
 										</ul>
 									</div>
 								</li>
@@ -52,14 +52,16 @@
     filter: blur(1px); height:80%; width:80%;">
 							<div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1"></span>
-  <input style="padding-bottom: 10px;" type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-  <input style="padding-bottom: 10px;" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
-  <input style="padding-bottom: 10px;" type="password" class="form-control" placeholder="Re-enter Password" aria-describedby="sizing-addon1">
-  <input style="padding-bottom: 10px;" type="password" class="form-control" placeholder="Re-enter Password" aria-describedby="sizing-addon1">
-  <input style="padding-bottom: 10px;" type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
+  <input style="padding-bottom: 10px;" type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" id="username">
+  <input style="padding-bottom: 10px;" type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" id="password">
+  <input style="padding-bottom: 10px;" type="password" class="form-control" placeholder="Re-enter Password" aria-describedby="sizing-addon1" id="password2">
+  <input style="padding-bottom: 10px;" type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1" id="email">
 </div>
+
+						<p class="danger" id="error">Username and password combination not recognised.</p>
+
 							<ul class="actions">
-								<li><a href="#" style="margin-bottom: 20px;" class="button special">Sign Up</a></li>
+								<li><button style="margin-bottom: 20px;" class="button special" onclick="signup()">Sign Up</button></li>
 							</ul>
 						</div>
 						
@@ -100,6 +102,8 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+				<script src="signup.js"></script>
+
 
 	</body>
 </html>

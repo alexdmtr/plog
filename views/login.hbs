@@ -1,191 +1,228 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<title>plog.travel</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body class="landing">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+<head>
+	<title>plog.travel</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">plog.travel</a></h1>
-						<nav id="nav">
+</head>
+
+<body class="landing">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<h1>
+				<a href="index.html">plog.travel</a>
+			</h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle">
+							<span>Menu</span>
+						</a>
+						<div id="menu">
 							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<!-- <li><a href="generic.html">Generic</a></li> -->
-<!-- Need to create html page for what we do.--><li><a href="signup.html">Sign Up</a></li>
-<!-- Html page for sign-up called signup.html--><li><a href="whoweare.html">Who we are</a></li>
-											<li><a href="contactusemail.html">Contact Us</a></li>
-										</ul>
-									</div>
+								<li>
+									<a href="/">Home</a>
 								</li>
+								<!-- <li><a href="generic.html">Generic</a></li> -->
+								<!-- Need to create html page for what we do.-->
+								<li>
+									<a href="/signup">Sign Up</a>
+								</li>
+								{{!--
+								<!-- Html page for sign-up called signup.html-->
+								<li>
+									<a href="whoweare.html">Who we are</a>
+								</li> --}} {{!--
+								<li>
+									<a href="contactusemail.html">Contact Us</a>
+								</li> --}}
 							</ul>
-						</nav>
-					</header>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<!-- Card Container --> 
-		
-							<!-- End of Card Container -->
-							<h2 style="padding-bottom: 20px;">Welcome to PLOG</h2>
-							<h1>Log In</h1>
-							<div style="padding-left: 10px; padding-right: 10px; ">
-							
-							<div id="avatarimagediv">
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<!-- Card Container -->
+
+				<!-- End of Card Container -->
+				<h2 style="padding-bottom: 20px;">Welcome to PLOG</h2>
+				<h1>Log In</h1>
+				<div style="padding-left: 10px; padding-right: 10px; ">
+
+					<div id="avatarimagediv">
 						<img src="images/avatarimage.jpg" class="rounded-circle" style=" -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
     filter: blur(5px); height:100px; width:100px;">
-							</div>
+					</div>
 
-							<div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1"></span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-  <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
-</div>
-							</div>
+					<div class="input-group input-group-lg">
+						<span class="input-group-addon" id="sizing-addon1"></span>
+						<input type="text" class="form-control" placeholder="Username" id="username" aria-describedby="sizing-addon1">
+						<input type="password" class="form-control" placeholder="Password" id="password" aria-describedby="sizing-addon1">
 
-							<ul class="actions">
-								<li style="padding-top: 20px;"><a href="index.html" class="button special">Log In</a></li>
-								<li style="padding-top: 20px;"><a href="signup.html" class="button">Sign Up</a></li>
-							</ul>
-						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
-					</section>
+						<p class="danger" id="error">Username and password combination not recognised.</p>
+					</div>
+				</div>
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>What is Plog?</h2>
-								<p>Plog is a platform for sharing experiences of travels through a sequence of photos accompanied by a story. </p>
-							</header>
-			
-						</div>
-					</section>
+				<ul class="actions">
+					<li style="padding-top: 20px;">
+						{{!-- <a href="/login" class="button special">Log In</a> --}}
+						<button type="submit" onclick="login()" >Log In</button>
+					</li>
+					<li style="padding-top: 20px;">
+						<a href="/signup" class="button">Sign Up</a>
+					</li>
+				</ul>
+			</div>
+			<a href="#one" class="more scrolly">Learn More</a>
+		</section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2><br />
-								Why sign up?</h2>
-								<p>Sharing experiences is what life is about, by joining you will be able to view and share your own experiences of travels with fellow travellers through just 113 characters and four pictures. Tell us your story, travel, live, laugh.</p>
-								<ul style="padding-top: 20px;"><a href="signup.html" class="button special">Sign up</a></ul>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>See the best places, instantly, anywhere.</h2>
-								<p>
-								By searching for a location, you are able to view hundreds of experience at that place. Discover local bars, unique food and amazing views.
-								</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Save, store or share it with the world.</h2>
-								<p>Plog allows you to choose settings according to your needs. You can simply save your experiences without publishing them, like a journal. Or you can make them public and share them with the world. </p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image" style="-webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
-    filter: blur(2px);"><img src="images/pic04.jpg" alt="" /></div><div class="content">
-								<h2>Get Exposure</h2>
-								<p>Whether you are an aspiring travel blogger or simply a person that travels a lot, our innovative system offers people the ability to get noticed. Our users don't just rate good experiences, they rate bad ones too. By providing a thumbs up and down system bad experiences are much less likely to show when you search for location, while on the other hand, good ones pop right at the top, giving just the best of the best.</p>
-							</div>
-						</section>
-					</section>
-
-				<!-- Three 
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Accumsan mus tortor nunc aliquet</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-							</header>
-							<ul class="features">
-								<li class="icon fa-paper-plane-o">
-									<h3>Arcu accumsan</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-laptop">
-									<h3>Ac Augue Eget</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-code">
-									<h3>Mus Scelerisque</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-headphones">
-									<h3>Mauris Imperdiet</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-heart-o">
-									<h3>Aenean Primis</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon fa-flag-o">
-									<h3>Tortor Ut</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-							</ul>
-						</div>
-					</section> -->
-
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Questions? Contact Us</h2>
-								<p>Got questions? Suggestions? Just wanna say hi? Feel free to email us.</p>
-							</header>
-							<ul class="actions vertical">
-								<li><a href="/contactusemail.html" class="button fit special">Email Us</a></li>
-								<li><a href="contactusemail.html" class="button fit">Suggestions</a></li>
-								<li><a href="contactusemail.html" class="button fit">Say Hi</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Partly Credited</li><li><a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
+		<!-- One -->
+		<section id="one" class="wrapper style1 special">
+			<div class="inner">
+				<header class="major">
+					<h2>What is Plog?</h2>
+					<p>Plog is a platform for sharing experiences of travels through a sequence of photos accompanied by a story. </p>
+				</header>
 
 			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		<!-- Two -->
+		<section id="two" class="wrapper alt style2">
+			<section class="spotlight">
+				<div class="image">
+					<img src="images/pic01.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h2>
+						<br /> Why sign up?</h2>
+					<p>Sharing experiences is what life is about, by joining you will be able to view and share your own experiences of travels
+						with fellow travellers through just 113 characters and four pictures. Tell us your story, travel, live, laugh.</p>
+					<ul style="padding-top: 20px;">
+						<a href="signup.html" class="button special">Sign up</a>
+					</ul>
+				</div>
+			</section>
+			<section class="spotlight">
+				<div class="image">
+					<img src="images/pic02.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h2>See the best places, instantly, anywhere.</h2>
+					<p>
+						By searching for a location, you are able to view hundreds of experience at that place. Discover local bars, unique food
+						and amazing views.
+					</p>
+				</div>
+			</section>
+			<section class="spotlight">
+				<div class="image">
+					<img src="images/pic03.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h2>Save, store or share it with the world.</h2>
+					<p>Plog allows you to choose settings according to your needs. You can simply save your experiences without publishing
+						them, like a journal. Or you can make them public and share them with the world. </p>
+				</div>
+			</section>
+			<section class="spotlight">
+				<div class="image" style="-webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);">
+					<img src="images/pic04.jpg" alt="" />
+				</div>
+				<div class="content">
+					<h2>Get Exposure</h2>
+					<p>Whether you are an aspiring travel blogger or simply a person that travels a lot, our innovative system offers people
+						the ability to get noticed. Our users don't just rate good experiences, they rate bad ones too. By providing a thumbs
+						up and down system bad experiences are much less likely to show when you search for location, while on the other hand,
+						good ones pop right at the top, giving just the best of the best.</p>
+				</div>
+			</section>
+		</section>
+		<section id="cta" class="wrapper style4">
+			<div class="inner">
+				<header>
+					<h2>Questions? Contact Us</h2>
+					<p>Got questions? Suggestions? Just wanna say hi? Feel free to email us.</p>
+				</header>
+				<ul class="actions vertical">
+					<li>
+						<a href="/contactusemail.html" class="button fit special">Email Us</a>
+					</li>
+					<li>
+						<a href="contactusemail.html" class="button fit">Suggestions</a>
+					</li>
+					<li>
+						<a href="contactusemail.html" class="button fit">Say Hi</a>
+					</li>
+				</ul>
+			</div>
+		</section>
 
-	</body>
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li>
+					<a href="#" class="icon fa-twitter">
+						<span class="label">Twitter</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-facebook">
+						<span class="label">Facebook</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-instagram">
+						<span class="label">Instagram</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-dribbble">
+						<span class="label">Dribbble</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="icon fa-envelope-o">
+						<span class="label">Email</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; Partly Credited</li>
+				<li>
+					<a href="http://html5up.net">HTML5 UP</a>
+				</li>
+			</ul>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+	<script src="login.js"></script>
+
+</body>
+
 </html>

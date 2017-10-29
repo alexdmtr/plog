@@ -46,7 +46,7 @@ exports.postUsers = function (req, res) {
   // res.status(501).send()
 
   let user = req.body
-
+  console.log(user)
   User
     .create(user)
     .then((result) => {
