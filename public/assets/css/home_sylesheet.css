@@ -1,0 +1,39 @@
+.flex-container
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.search-box-grow 
+{
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.search-box-input 
+{
+    width: 100% !important;
+}
+
+.dropdown
+{
+    justify-content: flex-end;
+    
+}
+
+.user-button 
+{
+    justify-content: flex-start;
+    width: ;
+}
+
+#footer-down
+{
+    text-align: center;
+}
+
+.follow-us
+{
+    margin-top: 5%;
+}

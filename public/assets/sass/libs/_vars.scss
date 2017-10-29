@@ -1,119 +1,81 @@
 // Misc.
 	$misc: (
-		max-spotlights:		10,
-		max-features:		10,
-		z-index-base:		10000
+		z-index-base:		10000,
+		main-layout:		(
+			default:		(
+				rows:		2,
+				columns:	4,
+				pad:		0.5,
+				minHeight:	20em
+			),
+			xlarge:			(
+				rows:		2,
+				columns:	3,
+				pad:		0.5,
+				minHeight:	20em
+			),
+			large:			(
+				rows:		2,
+				columns:	2,
+				pad:		0.5,
+				minHeight:	20em
+			),
+			medium:			(
+				rows:		3,
+				columns:	2,
+				pad:		0.5,
+				minHeight:	18em
+			),
+			xsmall:			(
+				rows:		2,
+				columns:	1,
+				pad:		0.5,
+				minHeight:	18em
+			)
+		)
 	);
 
 // Duration.
 	$duration: (
-		transitions:		0.2s,
-		menu:				0.5s,
-		fadein:				3s
+		transition:			0.2s,
+		header:				1s,
+		panel:				0.5s,
+		modal:				0.5s,
+		thumb:				0.15s
 	);
 
 // Size.
 	$size: (
 		element-height:		2.75em,
 		element-margin:		2em,
-		letter-spacing:		0.075em,
-		letter-spacing-alt:	0.225em
+		header:				4em
 	);
 
 // Font.
 	$font: (
-		family:				('Open Sans', Helvetica, sans-serif),
+		family:				('Source Sans Pro', Helvetica, sans-serif),
 		family-fixed:		('Courier New', monospace),
-		weight:				400,
-		weight-bold:		600,
-		weight-extrabold:	800
+		weight:				300,
+		weight-bold:		300,
+		weight-extrabold:	400,
+		kerning:			0.025em,
+		kerning-alt:		0.1em
 	);
 
 // Palette.
 	$palette: (
-		bg:					#2e3842,
-		fg:					#fff,
-		fg-bold:			#fff,
-		fg-light:			rgba(255,255,255,0.5),
-		border:				#fff,
-		border-bg:			rgba(144,144,144,0.25),
-		border2:			#fff,
-		border2-bg:			rgba(144,144,144,0.5),
-
-		accent1: (
-			bg:				#21b2a6,
-			fg-bold:		#ffffff,
-			fg:				mix(#21b2a6, #ffffff, 25%),
-			fg-light:		mix(#21b2a6, #ffffff, 40%),
-			border:			rgba(0,0,0,0.125),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(0,0,0,0.25),
-			border2-bg:		rgba(255,255,255,0.2)
-		),
-
-		accent2: (
-			bg:				#00ffcc,
-			fg-bold:		#ffffff,
-			fg:				mix(#00ffcc, #ffffff, 25%),
-			fg-light:		mix(#00ffcc, #ffffff, 40%),
-			border:			rgba(0,0,0,0.125),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(0,0,0,0.25),
-			border2-bg:		rgba(255,255,255,0.2)
-		),
-
-		accent3: (
-			bg:				#00f0ff,
-			fg-bold:		#ffffff,
-			fg:				mix(#00f0ff, #ffffff, 25%),
-			fg-light:		mix(#00f0ff, #ffffff, 40%),
-			border:			rgba(0,0,0,0.125),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(0,0,0,0.25),
-			border2-bg:		rgba(255,255,255,0.2)
-		),
-
-		accent4: (
-			bg:				#76ddff,
-			fg-bold:		#ffffff,
-			fg:				mix(#76ddff, #ffffff, 25%),
-			fg-light:		mix(#76ddff, #ffffff, 40%),
-			border:			rgba(0,0,0,0.125),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(0,0,0,0.25),
-			border2-bg:		rgba(255,255,255,0.2)
-		),
-
-		accent5: (
-			bg:				#505393,
-			fg-bold:		#ffffff,
-			fg:				mix(#505393, #ffffff, 25%),
-			fg-light:		mix(#505393, #ffffff, 40%),
-			border:			rgba(0,0,0,0.125),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(0,0,0,0.25),
-			border2-bg:		rgba(255,255,255,0.2)
-		),
-
-		accent6: (
-			bg:				#ed4933,
-			fg-bold:		#ffffff,
-			fg:				mix(#ed4933, #ffffff, 25%),
-			fg-light:		mix(#ed4933, #ffffff, 40%),
-			border:			rgba(0,0,0,0.125),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(0,0,0,0.25),
-			border2-bg:		rgba(255,255,255,0.2)
-		),
-
-		accent7: (
-			bg:				#ffffff,
-			fg-bold:		#2E3842,
-			fg:				#4E4852,
-			fg-light:		#8E8892,
-			border:			#dfdfdf,
-			border-bg:		rgba(0,0,0,0.0375),
-			border2:		#bfbfbf,
-			border2-bg:		rgba(0,0,0,0.1)
-		)
+		bg:					#242629,
+		bg-alt:				#1f2224,
+		bg-overlay:			transparentize(#242629, 0.75),
+		bg-overlay-alt:		transparentize(#242629, 0.5),
+		bg-ie-overlay:		transparentize(#242629, 0.45),
+		bg-ie-overlay-alt:	transparentize(#242629, 0.2),
+		fg:					#a0a0a1,
+		fg-bold:			#ffffff,
+		fg-medium:			#707071,
+		fg-light:			#505051,
+		border:				#36383c,
+		border-bg:			#34363b,
+		border-bg-alt:		#44464b,
+		accent1:			#34a58e
 	);

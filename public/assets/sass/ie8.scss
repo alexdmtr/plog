@@ -4,36 +4,10 @@
 @import 'libs/skel';
 
 /*
-	Spectral by HTML5 UP
+	Multiverse by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
-/* Icon */
-
-	.icon {
-		&.major {
-			border: none;
-
-			&:before {
-				font-size: 3em;
-			}
-		}
-	}
-
-/* Form */
-
-	label {
-		color: _palette(accent7, fg-bold);
-	}
-
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	select,
-	textarea {
-		border: solid 1px _palette(accent7, border);
-	}
 
 /* Button */
 
@@ -42,62 +16,27 @@
 	input[type="button"],
 	button,
 	.button {
-		border: solid 2px _palette(accent7, border);
+		border: solid 2px _palette(border);
 
 		&.special {
-			border: 0 !important;
+			border: 0;
 		}
 	}
 
-/* Page Wrapper + Menu */
+/* Panel */
 
-	#menu {
+	.panel {
+		background: _palette(bg);
 		display: none;
-	}
 
-	body.is-menu-visible {
-		#menu {
+		&.active {
 			display: block;
 		}
-	}
 
-/* Header */
-
-	#header {
-		nav {
-			> ul {
-				> li {
-					> a {
-						&.menuToggle {
-							&:after {
-								display: none;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-
-/* Banner + Wrapper (style4) */
-
-	#banner,
-	.wrapper.style4 {
-		-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
-
-		&:before {
-			display: none;
-		}
-	}
-
-/* Banner */
-
-	#banner {
-		.more {
-			height: 4em;
-
-			&:after {
-				display: none;
+		> .closer {
+			&:before {
+				content: '\00d7';
+				font-size: 42px;
 			}
 		}
 	}
@@ -105,11 +44,11 @@
 /* Main */
 
 	#main {
-		> header {
-			-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
-
-			&:before {
-				display: none;
+		.thumb {
+			> h2 {
+				text-align: center;
+				width: 100%;
+				left: 0;
 			}
 		}
 	}

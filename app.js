@@ -119,7 +119,7 @@ router.route('/users/:userId')
     .get(jwtMiddleware, usersController.getUser)
 
 app.get('/', jwtMiddleware, function (req, res) {
-    res.render('home')
+    res.render('home', { user: req.user })
 })
 
 app.get('/login', (req, res) => {
