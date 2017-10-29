@@ -2,7 +2,28 @@ const models = require('../models').models
 var Post = models.post
 var User = models.user
 var Group = models.group
+var Photo = models.photo
 
+// function getPostPhotos(postId) {
+//   return Photo.findAll({
+//     where: { postId: postId }
+//   })
+// }
+exports.getPosts = async function(req, res) {
+  Post
+    .findAll({
+      include: [ User, Photo ]
+    })
+    .then(posts => {
+      // for (let i = 0; i < posts.length; i++) {
+      //   posts[i].photos = getPostPhotos(posts[i].id)
+      // }
+
+      res.json(posts)
+      
+    })
+
+}
 /*
   Method POST on route ‘api/group/{groupId}/post’ - creates a new post and receives all the fields except groupId, because we have the groupId in the route.
 */

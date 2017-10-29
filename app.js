@@ -73,39 +73,39 @@ router.route('/auth')
     .post(authController.postAuth)
 
 
-// Add endpoints for /api/groups/{userId}
-router.route('/groups/:userId')
-    .get(jwtMiddleware, groupsController.getUserGroups)
+// // Add endpoints for /api/groups/{userId}
+// router.route('/groups/:userId')
+//     .get(jwtMiddleware, groupsController.getUserGroups)
 
-// Add endpoints for /api/groups
-router.route('/groups')
-    .get(jwtMiddleware, groupsController.getGroups)
-    .post(jwtMiddleware, groupsController.postGroups)
+// // Add endpoints for /api/groups
+// router.route('/groups')
+//     .get(jwtMiddleware, groupsController.getGroups)
+//     .post(jwtMiddleware, groupsController.postGroups)
 
-// Add endpoints for /api/group/{groupId}
-router.route('/group/:groupId')
-    .put(jwtMiddleware, groupsController.putGroup)
-    .get(jwtMiddleware, groupsController.getGroup)
-    .delete(jwtMiddleware, groupsController.deleteGroup)
+// // Add endpoints for /api/group/{groupId}
+// router.route('/group/:groupId')
+//     .put(jwtMiddleware, groupsController.putGroup)
+//     .get(jwtMiddleware, groupsController.getGroup)
+//     .delete(jwtMiddleware, groupsController.deleteGroup)
 
-// Add endpoints for /api/group/{groupId}/members
-router.route('/group/:groupId/members')
-    .get(jwtMiddleware, groupsController.getGroupMembers)
+// // Add endpoints for /api/group/{groupId}/members
+// router.route('/group/:groupId/members')
+//     .get(jwtMiddleware, groupsController.getGroupMembers)
 
-// Add endpoint for /api/group/:groupId/add/:userId
-router.route('/group/:groupId/add/:userId')
-    .put(jwtMiddleware, groupsController.putGroupMember)
+// // Add endpoint for /api/group/:groupId/add/:userId
+// router.route('/group/:groupId/add/:userId')
+//     .put(jwtMiddleware, groupsController.putGroupMember)
 
-// Add endpoint for /api/group/:groupId/add/:userId
-router.route('/group/:groupId/remove/:userId')
-    .delete(jwtMiddleware, groupsController.deleteGroupMember)
+// // Add endpoint for /api/group/:groupId/add/:userId
+// router.route('/group/:groupId/remove/:userId')
+//     .delete(jwtMiddleware, groupsController.deleteGroupMember)
 
-router.route('/group/:groupId/post')
-    .post(jwtMiddleware, postsController.postPost)
+// router.route('/group/:groupId/post')
+//     .post(jwtMiddleware, postsController.postPost)
 
-router.route('/group/:groupId/post/:postId')
-    .put(jwtMiddleware, postsController.putPost)
-    .delete(jwtMiddleware, postsController.deletePost)
+// router.route('/group/:groupId/post/:postId')
+//     .put(jwtMiddleware, postsController.putPost)
+//     .delete(jwtMiddleware, postsController.deletePost)
 
 // Add endpoints for /api/users
 router.route('/users')
@@ -117,6 +117,9 @@ router.route('/users/:userId')
     .put(jwtMiddleware, usersController.putUser)
     .delete(jwtMiddleware, usersController.deleteUser)
     .get(jwtMiddleware, usersController.getUser)
+
+router.route('/posts')
+    .get(jwtMiddleware, postsController.getPosts)
 
 app.get('/', jwtMiddleware, function (req, res) {
     res.render('home', { user: req.user })

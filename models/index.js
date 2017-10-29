@@ -17,16 +17,20 @@ var sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, proc
 var User = require('./user')(sequelize)
 // var Group = require('./group')(sequelize)
 var Post = require('./post')(sequelize)
-
+var Photo = require('./photo')(sequelize)
 // Group.belongsTo(User, {as: 'owner'})
 
 // Group.belongsToMany(User, {through: 'user_group'})
 // User.belongsToMany(Group, {through: 'user_group'})
 
+Post.belongsTo(User)
+Photo.belongsTo(Post)
 
-Post.belongsTo(User, {as: 'owner'})
+
+User.hasMany(Post)
+Post.hasMany(Photo)
 // Post.belongsTo(Group, {as: 'group'})
 
-sequelize.seed = require('./seed')({User, Post})
+sequelize.seed = require('./seed')({User, Post, Photo})
 
 module.exports = sequelize
