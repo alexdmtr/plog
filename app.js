@@ -45,6 +45,12 @@ app.use(function (req, res, next) {
 })
 
 
+app.use(express.static('public'))
+var exphbs  = require('express-handlebars');
+app.engine('hbs', exphbs({defaultLayout:'layout', extname:"hbs"}))
+app.set('view engine', 'hbs')
+
+
 var router = express.Router()
 var authController = require('./controllers/authController')
 var groupsController = require('./controllers/groupsController')
@@ -101,20 +107,38 @@ router.route('/users/:userId')
     .delete(jwtMiddleware, usersController.deleteUser)
     .get(jwtMiddleware, usersController.getUser)
 
-app.get('/', function (req, res) {
-    res.status(200).json({
-        '/api': 'API'
-    })
+app.get('/', jwtMiddleware, function (req, res) {
+    res.render('home')
 })
 
-app.get('/api', (req, res) => {
-    res.status(200).json({
-        '/auth': 'Authentication',
-        '/group': 'Group info & posts',
-        '/groups': 'Groups',
-        '/users': 'Users'
-    })
+app.get('/login', (req, res) => {
+    res.render('login')
 })
+
+app.get('/signup', (req, res) => {
+    res.render('signup')
+})
+
+
+
+// app.get('/api', (req, res) => {
+//     res.status(200).json({
+//         '/auth': 'Authentication',
+//         '/group': 'Group info & posts',
+//         '/groups': 'Groups',
+//         '/users': 'Users'
+//     })
+// })
 app.use('/api', router)
+
+
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+    //   res.status(401).send('invalid token...')
+    console.log("error!")
+     res.redirect('/login');
+    } else
+    next(err)
+  });
 
 module.exports = app
