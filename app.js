@@ -15,16 +15,27 @@ var assert = require('assert')
 envVars.forEach((value) => assert.ok(process.env[value], `${value} not set`))
 
 var express = require('express')
+var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
 var expressJwt = require('express-jwt')
 var morgan = require('morgan')
 var winston = require('winston')
 var jwt = require('jsonwebtoken')
 var jwtMiddleware = expressJwt({
-    secret: process.env.JWT_SECRET
+    secret: process.env.JWT_SECRET,
+    getToken: function (req) {
+        if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+            return req.headers.authorization.split(' ')[1];
+        }
+        else if (req.cookies) {
+            return req.cookies['access_token']
+        }
+        return null;
+      }
 })
 // jwtMiddleware = (req, res, next) => { next() }
 var app = express()
+app.use(cookieParser())
 
 app.use(morgan('dev'))
 // simulate latency
@@ -112,6 +123,9 @@ app.get('/', jwtMiddleware, function (req, res) {
 })
 
 app.get('/login', (req, res) => {
+    console.log(req.cookies)
+    console.log(req.signedCookies)
+    console.log("HEYYY!")
     res.render('login')
 })
 

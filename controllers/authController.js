@@ -7,14 +7,17 @@ var bcrypt = require('bcrypt')
 exports.postAuth = function (req, res) {
 
     this.user = {}
+    console.log(req.body)
     User
         .findOne({
             where: {
-                username: req.body.username
-            }
+                $or: [{username: req.body.username}, {email: req.body.username}],
+            },
+            
         })
         .then(function (result) {
             this.user = result
+            // console.log(result)
             return bcrypt
                 .compare(req.body.password, result.password)
 
@@ -22,10 +25,6 @@ exports.postAuth = function (req, res) {
         .then(function (ok) {
             if (ok) {
                 var token = jwt.sign({ username: this.user.username, id: this.user.id }, process.env.JWT_SECRET)
-                // new Cookies(req, res).set('access_token', token, {
-                //     httpOnly: true,
-                //     secure: true      // for your production environment
-                // });
                 var d = new Date()
                 d.setTime(d.getTime() + 7*24*60*60*1000); // 7 days
                 res.cookie('access_token', token, { expires: d })
@@ -42,6 +41,7 @@ exports.postAuth = function (req, res) {
         })
         .catch(function (err) {
             res.status(401).send(err)
+            console.log(err)
         })
 
 }

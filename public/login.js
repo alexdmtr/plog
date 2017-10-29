@@ -9,7 +9,7 @@ function login() {
   $.ajax({
     method: 'POST',
     url: '/api/auth',
-    body: { username, password},
+    data: { username, password },
     success: function() {
       window.location.replace("/")
     },

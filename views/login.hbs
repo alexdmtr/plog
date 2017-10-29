@@ -71,17 +71,20 @@
 
 					<div class="input-group input-group-lg">
 						<span class="input-group-addon" id="sizing-addon1"></span>
-						<input type="text" class="form-control" placeholder="Username" id="username" aria-describedby="sizing-addon1">
-						<input type="password" class="form-control" placeholder="Password" id="password" aria-describedby="sizing-addon1">
+						<form>
+							<input type="text" class="form-control" placeholder="Username or email" id="username" aria-describedby="sizing-addon1">
+							<input type="password" class="form-control" placeholder="Password" id="password" aria-describedby="sizing-addon1">
 
-						<p class="danger" id="error">Username and password combination not recognised.</p>
+							<p class="danger" id="error">Login credentials not recognised.</p>
 					</div>
 				</div>
 
 				<ul class="actions">
 					<li style="padding-top: 20px;">
-						{{!-- <a href="/login" class="button special">Log In</a> --}}
-						<button type="submit" onclick="login()" >Log In</button>
+						{{!--
+						<a href="/login" class="button special">Log In</a> --}}
+						<button type="submit" onclick="login(); return false;">Log In</button>
+						</form>
 					</li>
 					<li style="padding-top: 20px;">
 						<a href="/signup" class="button">Sign Up</a>
