@@ -41,9 +41,9 @@
           <button class="btn btn-primary dropdown-togle" type="button" data-toggle="dropdown">@{{ user.username }}</button>
         </div>
         <div class="form-group search-box-grow" style="display:inline;">
-          <input type="text" class="search-box-input form-control col-8" placeholder="Location">
+          <input type="text" class="search-box-input form-control col-8" placeholder="Search by name, location or user" id="searchbox" autofocus value="{{ searchQuery}}">
         </div>
-        <button type="submit " class="btn btn-default ">Search</button>
+        <button type="submit" class="btn btn-danger" onclick="event.preventDefault(); search()" >Search</button>
         <div class="dropdown">
           <button class="btn btn-primary dropdown-togle" type="button" data-toggle="dropdown">Sort By
             <span class="caret"></span>
@@ -77,129 +77,6 @@
       </h2>
       <p> [Description] </p>
     </article>
-
-{{!-- 
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article>
-
-    <article class="thumb">
-      <a href="images/fulls/12.jpg" class="image">
-        <img src="images/thumbs/12.jpg" alt="" /> </a>
-      <h2>
-        <a href="#"> [Plog Name] </a>
-        <a href="#"> [Username]</a>
-        <a href="#"> [Location] </a>
-      </h2>
-      <p> [Description] </p>
-    </article> --}}
 
   </div>
 

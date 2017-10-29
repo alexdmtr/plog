@@ -122,7 +122,8 @@ router.route('/posts')
     .get(jwtMiddleware, postsController.getPosts)
 
 app.get('/', jwtMiddleware, function (req, res) {
-    res.render('home', { user: req.user })
+    let searchQuery = req.query.query
+    res.render('home', { user: req.user, searchQuery })
 })
 
 app.get('/login', (req, res) => {

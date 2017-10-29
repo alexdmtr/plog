@@ -13,16 +13,22 @@ function iconTemplate(plog) {
 </article>`
 }
 
-function loadStories() {
-  const URL = `/api/posts`
+function search() {
+  var terms = $("#searchbox").val()
+
+  let query = "/?query="+terms
+  window.history.pushState("", "", query);
+  loadStories(query)
+}
+function loadStories(query) {
+  if (!query) return search()
+  const URL = `/api/posts${query}`
 
   $.ajax({
     method: 'GET',
     url: URL,
     success: posts => {
       $("#main").html("")
-      posts.forEach(post => $("#main").append(iconTemplate(post)))
-      posts.forEach(post => $("#main").append(iconTemplate(post)))
       posts.forEach(post => $("#main").append(iconTemplate(post)))
       setThumbs()
       poptrox()

@@ -1,26 +1,41 @@
 const models = require('../models').models
+const Sequelize = require('sequelize')
 var Post = models.post
 var User = models.user
 var Group = models.group
 var Photo = models.photo
+const Op = Sequelize.Op
 
 // function getPostPhotos(postId) {
 //   return Photo.findAll({
 //     where: { postId: postId }
 //   })
 // }
-exports.getPosts = async function(req, res) {
+exports.getPosts = async function (req, res) {
+  let query = req.query.query
   Post
     .findAll({
-      include: [ User, Photo ]
+      include: [User, Photo]
     })
     .then(posts => {
       // for (let i = 0; i < posts.length; i++) {
       //   posts[i].photos = getPostPhotos(posts[i].id)
       // }
 
+      if (!query) query = ""
+      else {
+        query = query.toUpperCase()
+        posts = posts.filter(post => {
+            let ok = [post.title, post.location, post.user.username]
+
+            ok = ok.map(x => x.toUpperCase())
+
+            return ok.some(x => x.includes(query))
+        })
+    }
+
       res.json(posts)
-      
+
     })
 
 }
