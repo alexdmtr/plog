@@ -142,6 +142,12 @@ app.get('/signup', (req, res) => {
     res.render('signup')
 })
 
+app.get('/logout', (req, res) => {
+    res.cookie('access_token', null, { expires: new Date() })
+
+    res.redirect('/login')
+})
+
 var models = require('./models').models
 
 app.get('/details/:id', async function(req, res) {

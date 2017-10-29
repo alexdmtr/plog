@@ -100,11 +100,6 @@ module.exports = {
       postID: 1
     },
     {
-      title: "Iceland Mountains",
-      url: "https://images.unsplash.com/photo-1455757618770-0a58b0b28ebd?auto=format&fit=crop&w=881&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D",
-      postID: 2
-    },
-    {
       title: "Keflavik!",
       url: "https://i1.wp.com/grapevine.is/wp-content/uploads/akureyri_26506505815_o-1.jpg?fit=1800%2C1200&quality=85&ssl=1",
       postID: 2

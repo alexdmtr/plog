@@ -6,7 +6,12 @@ function getId() {
   return `article${__id++}`;
 }
 function gotoStory(id) {
-  window.location.replace(`/details/${id}`)
+  window.open(`/details/${id}`)
+}
+function logout() {
+  if (confirm("Do you wish to logout?")) {
+    window.location.replace("/logout")
+  }
 }
 function iconTemplate(plog) {
   let id = getId() 
