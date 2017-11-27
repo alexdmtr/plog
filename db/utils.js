@@ -74,6 +74,21 @@ module.exports = class Utils {
   async getPosts({ searchQuery }) {
     var posts = await this.getList('/posts');
 
+    if (searchQuery)
+      posts = posts.filter(post => {
+        const queryFields = [post.user.username, post.location, post.title];
+
+        for (let i = 0; i < queryFields.length; i++) {
+          const a = queryFields[i].toUpperCase();
+          const b = searchQuery.toUpperCase();
+
+          if (a.includes(b))
+            return true;
+        }
+
+        return false;
+      });
+
     return posts;
   }
 

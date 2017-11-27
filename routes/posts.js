@@ -6,7 +6,7 @@ var db = require('../db');
 // }
 
 async function dataGetPosts(query) {
-  return db.utils.getPosts({query})
+  return db.utils.getPosts({searchQuery:query})
   // return Post.findAll({
   //   include: [User, Photo]
   // })
