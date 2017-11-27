@@ -11,86 +11,8 @@ admin.initializeApp({
 
 var db = admin.database();
 
-
-class Utils {
-  async getList(path) {
-    var snapshot = await db.ref(path).once('value')
-  
-    var data = []
-    snapshot.forEach(kid => {
-      data.push({
-        key: kid.key,
-        ...kid.val()
-      });
-    })
-  
-    return data;
-  }
-  
-  async getObj(path) {
-    var snapshot = await db.ref(path).once('value')
-    var obj = snapshot.val()
-  
-    obj.key = obj.key || snapshot.key
-  
-    return obj;
-  }
-  
-  async getUser(username) {
-    var users = await this.getList("/users")
-  
-    users = users.filter(user => user.username == username || user.email == username);
-  
-    if (users.length == 0) return false
-  
-    const user = users[0];
-  
-    return user
-  }
-  
-  
-  async login({ username, password }) {
-  
-    const user = await this.getUser(username);
-  
-    if (!user) return false;
-  
-    const passwordOK = await bcrypt.compare(password, user.password);
-  
-    if (passwordOK)
-      return user;
-    return false;
-  }
-  
-  
-  async hashPassword(user) {
-    const hash = await bcrypt.hash(user.password, saltRounds)
-    user.password = hash
-  }
-  
-  async register({ email, username, password }) {
-    if (await this.getUser(username))
-      throw new Error("Username already used");
-  
-    let user = {email, username, password};
-    await this.hashPassword(user);
-    await db.ref("/users").push(user);
-  
-    return true;
-  }
-  
-  async getPosts({searchQuery}) {
-    var posts = await this.getList('/posts');
-  
-    return posts;
-  }
-  
-  async getPostDetails({postId}) {
-  
-  }
-}
-
-db.utils = new Utils();
+var Utils = require('./utils');
+db['utils'] = new Utils(db);
 
 module.exports = db;
 
