@@ -3,7 +3,7 @@ var https = require('https')
 var http = require('http')
 var pem = require('pem')
 var winston = require('winston')
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 pem.createCertificate({
   days: 1,

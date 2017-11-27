@@ -4,15 +4,9 @@ var gulp = require('gulp'),
 var app = require('./app')
 
 gulp.task('seed', function () {
-    var db = require('./models')
-
-    return db
-        .sync({
-            force: true
-        })
-        .then(() => {
-            return db.seed();
-        });
+    var seed = require('./db-seed')
+    
+    return seed();
 })
 
 

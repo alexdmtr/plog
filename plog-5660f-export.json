@@ -1,0 +1,65 @@
+{
+  "posts" : [
+    {
+      "title": "Weekend in Manchester",
+      "message": "#goodvibes",
+      "location": "Manchester",
+      "user": "alexd"
+    },
+    {
+      "title": "Trip to Iceland",
+      "message": "#coldwinds",
+      "location": "Reykjavík",
+      "user": "darth.vader"
+    },
+    {
+      "title": "Sweden is amazing!",
+      "message": "#belowzerolife",
+      "location": "Stockholm",
+      "user": "george.sholder"
+    },
+    {
+      "title": "Week in Thailand",
+      "message": "#itsoshumid #help",
+      "location": "Pataya",
+      "user": "leone.paddington"
+    },
+    {
+      "title": "Weekend in Morocco",
+      "message": "#morocco #marrakesh",
+      "location": "Marrakesh",
+      "user": "leone.paddington"
+    },
+    {
+      "title": "Two Days in Barcelona",
+      "message": "Most amazing two days in Barcelona, everything here is so amazing!",
+      "location": "Barcelona",
+      "user": "george.sholder"
+    },
+    {
+      "title": "Rolling on route 66",
+      "message": "Rolling in California!",
+      "location": "California",
+      "user": "george.sholder"
+    },
+    {
+      "title": "Week in Georgia",
+      "message": "Skiing, Drinking and having fun!",
+      "location": "Georgia",
+      "user": "george.sholder"
+    },
+    {
+      "title": "Five days in Barcelona",
+      "message": "Making these five days the most amazing in our life.",
+      "location": "Barcelona",
+      "user": "leone.paddington"
+    }
+  ],
+  "users": {
+    "-KzxLo_60mPrd_BxihLV" : {
+      "email" : "alexadrian.dmtr@gmail.com",
+      "password" : "$2a$10$6OKzEnG.vqFQBUmYVAozQuXdOjt8LfrWjhGQtH3XOrD5N.bx8saK6",
+      "username" : "alexd"
+    }
+  }
+}
