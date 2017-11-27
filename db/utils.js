@@ -77,7 +77,15 @@ module.exports = class Utils {
     return posts;
   }
 
-  async getPostDetails({ postId }) {
-
+  async getPost({ key }) {
+    return this.db.ref(`/posts/${key}`).once('value')
+      .then(snapshot => {
+        if (!snapshot)
+          throw new Error('No such post');
+        return {
+          key: snapshot.key,
+          ...snapshot.val()
+        };
+      })
   }
 }

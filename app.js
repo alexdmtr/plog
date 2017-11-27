@@ -1,7 +1,7 @@
 require('dotenv').config()
 /* Add following environment variables in .env: */
 let envVars = [
-    "JWT_SECRET"
+  "JWT_SECRET"
 ]
 
 var assert = require('assert')
@@ -16,38 +16,38 @@ var morgan = require('morgan')
 var winston = require('winston')
 var jwt = require('jsonwebtoken')
 var jwtMiddleware = expressJwt({
-    secret: process.env.JWT_SECRET,
-    getToken: function (req) {
-        if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
-            return req.headers.authorization.split(' ')[1];
-        }
-        else if (req.cookies) {
-            return req.cookies['access_token']
-        }
-        return null;
-      }
+  secret: process.env.JWT_SECRET,
+  getToken: function (req) {
+    if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+      return req.headers.authorization.split(' ')[1];
+    }
+    else if (req.cookies) {
+      return req.cookies['access_token']
+    }
+    return null;
+  }
 })
 var app = express()
 app.use(cookieParser())
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }))
 app.use(bodyParser.json())
 
 // allow CORS
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept")
-    next()
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept")
+  next()
 })
 
 
 app.use(express.static('public'))
-var exphbs  = require('express-handlebars');
-app.engine('hbs', exphbs({defaultLayout:'layout', extname:"hbs"}))
+var exphbs = require('express-handlebars');
+app.engine('hbs', exphbs({ defaultLayout: 'layout', extname: "hbs" }))
 app.set('view engine', 'hbs')
 
 
@@ -58,52 +58,45 @@ var users = require('./routes/users')
 
 // Add endpoints for /api/auth
 router.route('/auth')
-    .post(auth.postAuth)
+  .post(auth.postAuth)
 
 // Add endpoints for /api/users
 router.route('/users')
-    .post(users.postUsers)
+  .post(users.postUsers)
 router.route('/posts')
-    .get(jwtMiddleware, posts.getPosts)
+  .get(jwtMiddleware, posts.getPosts)
 
 app.get('/', jwtMiddleware, function (req, res) {
-    let searchQuery = req.query.query
-    res.render('home', { user: req.user, searchQuery })
+  let searchQuery = req.query.query
+  res.render('home', { user: req.user, searchQuery })
 })
 
 
 app.get('/login', (req, res) => {
-    if (req.user)
-        return res.redirect('/')
-    res.render('login')
+  if (req.user)
+    return res.redirect('/')
+  res.render('login')
 })
 
 app.get('/signup', (req, res) => {
-    if (req.user)
-        return res.redirect('/')
-    res.render('signup')
+  if (req.user)
+    return res.redirect('/')
+  res.render('signup')
 })
 
 app.get('/logout', (req, res) => {
-    res.cookie('access_token', null, { expires: new Date() })
+  res.cookie('access_token', null, { expires: new Date() })
 
-    res.redirect('/login')
+  res.redirect('/login')
 })
 
-app.get('/details/:id', async function(req, res) {
-    // let id = req.params.id
-    // console.log(id)
-    //
-    // var Post = models.post;
-    // var Photo = models.photo
-    // var User = models.user
-    //
-    // var post = await Post.findById(id, {
-    //     include: [ User, Photo ]
-    // })
-    //
-    // console.log(post)
-    // res.render('detail', { plog:post})
+var db = require('./db');
+
+app.get('/details/:id', async function (req, res) {
+  var post = await db.utils.getPost({
+    key: req.params.id
+  })
+  res.render('detail', { plog:post})
 })
 
 
@@ -111,12 +104,12 @@ app.use('/api', router)
 
 
 app.use(function (err, req, res, next) {
-    if (err.name === 'UnauthorizedError') {
+  if (err.name === 'UnauthorizedError') {
     //   res.status(401).send('invalid token...')
     console.log("error!")
-     res.redirect('/login');
-    } else
+    res.redirect('/login');
+  } else
     next(err)
-  });
+});
 
 module.exports = app
