@@ -14,7 +14,7 @@ function logout() {
   }
 }
 function iconTemplate(plog) {
-  let id = getId() 
+  let id = getId()
   let photo = plog.photos[Math.floor(plog.photos.length*Math.random())]
   return `<article class="thumb">
   <a href="" onclick="event.preventDefault(); gotoStory('${plog.key}')" class="image">
@@ -29,10 +29,10 @@ function iconTemplate(plog) {
 
 function search() {
   var terms = $("#searchbox").val()
-
+  
   let query = "/?query="+terms
   window.history.pushState("", "", query);
-  
+
   loadStories(query)
 }
 function loadStories(query) {
@@ -51,5 +51,21 @@ function loadStories(query) {
   })
 }
 function main() {
+
+  var $keypress = Rx.Observable.fromEvent($("#searchbox"), 'input')
+  var $newQuery = new Rx.Subject();
+
+  $keypress
+    .debounceTime(500)
+    .subscribe(() => {
+      var terms = $("#searchbox").val()
+      $newQuery.next(terms);
+    })
+
+  $newQuery
+    .distinctUntilChanged()
+    .subscribe(() => {
+      loadStories()
+    })
   loadStories()
 }
