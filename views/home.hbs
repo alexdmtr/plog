@@ -40,11 +40,11 @@
         <div class="user-button">
           <button class="btn btn-primary dropdown-togle" type="button" data-toggle="dropdown" onclick="logout()">@{{ user.username }}</button>
         </div>
-        <div class="form-group search-box-grow" style="display:inline;">
+        <div class="form-group search-box-grow" style="display:inline;margin-bottom:2px">
           <input type="text" class="search-box-input form-control col-8" placeholder="Search by name, location or user" id="searchbox" autofocus value="{{ searchQuery}}">
         </div>
-        <button type="submit" class="btn btn-danger" onclick="event.preventDefault(); search()" >Search</button>
-        <div class="dropdown">
+        <button type="submit" class="btn btn-danger" onclick="event.preventDefault(); search()" style="display: none" >Search</button>
+        {{!-- <div class="dropdown">
           <button class="btn btn-primary dropdown-togle" type="button" data-toggle="dropdown">Sort By
             <span class="caret"></span>
           </button>
@@ -59,7 +59,7 @@
               <a href="#">Name</a>
             </li>
           </ul>
-        </div>
+        </div> --}}
       </form>
     </div>
   </nav>
