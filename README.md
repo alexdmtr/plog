@@ -1,15 +1,6 @@
-# Plog!
+# Plog
+<img src='https://github.com/alexdmtr/plog/blob/master/public/images/pic01.jpg?raw=true' height='300px' />
 
-## To install:
-`npm install`
+Plog is a platform for sharing experiences of travels through a sequence of photos accompanied by a story. 
 
-Then create an `.env` file in the root directory and add there the environment variables requested in `app.js`.
-
-You'll need a postgres server to attach to.
-
-
-## To run database sync and tests:
-`npm test`
-
-## To run app (you must run sync before):
-`npm start`
+We developed this fun and visual experience focused project during the [Porticode 2.0](https://porticode.io/) hackathon held at UCL. It won the [MLH](https://mlh.io/) **Best Team** prize. 
