@@ -29,9 +29,6 @@
     "supertest": "^6.3.3",
     "winston": "^3.8.2"
   },
-  "devDependencies": {
-    "pem": "^1.14.6"
-  },
   "scripts": {
     "test": "gulp test",
     "start": "gulp --silent",
