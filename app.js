@@ -18,7 +18,7 @@ var expressJwt = require('express-jwt')
 var morgan = require('morgan')
 var winston = require('winston')
 var jwt = require('jsonwebtoken')
-var jwtMiddleware = expressJwt({
+var jwtMiddleware = expressJwt.expressjwt({
   secret: process.env.JWT_SECRET,
   getToken: function (req) {
     if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
@@ -28,7 +28,8 @@ var jwtMiddleware = expressJwt({
       return req.cookies['access_token']
     }
     return null;
-  }
+  },
+  algorithms: ["HS256"]
 })
 var app = express()
 app.use(cookieParser())
@@ -50,7 +51,7 @@ app.use(function (req, res, next) {
 
 app.use(express.static('public'))
 var exphbs = require('express-handlebars');
-app.engine('hbs', exphbs({ defaultLayout: 'layout', extname: "hbs" }))
+app.engine('hbs', exphbs.engine({ defaultLayout: 'layout', extname: "hbs" }))
 app.set('view engine', 'hbs')
 
 
@@ -99,7 +100,7 @@ app.get('/details/:id', async function (req, res) {
   var post = await db.utils.getPost({
     key: req.params.id
   })
-  res.render('detail', { plog:post})
+  res.render('detail', { plog: post })
 })
 
 
